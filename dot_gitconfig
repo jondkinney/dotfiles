@@ -1,0 +1,65 @@
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore
+[color]
+	diff = auto
+	ui = true
+[diff]
+	; tool = vimdiff
+	tool = difftastic
+	external = difft
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[mergetool "fugitive"]
+	cmd = mvim -f -c \"Gdiff\" \"$MERGED\"
+[push]
+	default = current
+[merge]
+	ff = false
+[init]
+	templatedir = ~/.git_template
+[pull]
+	rebase = true
+[rebase]
+	autosquash = true
+[mergetool]
+	keepBackup = true
+[alias]
+	dlog = "-c diff.external=difft log -p --ext-diff"
+	c = cherry -v --abbrev=7
+	cm = cherry -v --abbrev=7 master #useful in a feature branch to show what commits the feature branch has that master doesn't
+	cprd = cherry -v --abbrev=7 production
+	cs = cherry -v --abbrev=7 staging
+	cp = cherry-pick
+	fp = fetch --prune
+	ctags = !.git/hooks/ctags
+	ri = rebase --interactive
+  ff = "!_() { f=$(git rev-parse --abbrev-ref HEAD 2>/dev/null | cut -d\"/\" -f 2 | tr -d \"\n\"); git flow feature finish $f; }; _"
+	up = "pull --rebase origin master"
+	lg = log --color --graph --branches --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	unstage = reset HEAD --
+	amend = commit --amend
+	lastedited = log --pretty=format: --name-only --no-merges -n 1
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[include]
+	path = ~/.gitconfig_private
+[github]
+	user = jondkinney
+[user]
+	name = Jon Kinney
+	email = jonkinney@gmail.com
