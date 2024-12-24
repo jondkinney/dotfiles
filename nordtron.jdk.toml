@@ -1,0 +1,126 @@
+version = 3
+final_space = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '<#5e81ac>┏[</>{{ .UserName }}<#5e81ac>]</>'
+    foreground = '#88c0d0'
+    type = 'session'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '<#5e81ac>--[</>{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#8fbcbb>  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}</><#5e81ac> ❘ </>{{ end }}{{ if .Staging.Changed }}<#88c0d0> {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<#5e81ac> ❘ </><#616E88> {{ .StashCount }}</>{{ end }}<#5e81ac>]</>'
+    foreground = '#b48ead'
+    type = 'git'
+    style = 'plain'
+    background_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{ end }}', '{{ if gt .Ahead 0 }}{{ end }}', '{{ if gt .Behind 0 }}{{ end }}']
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      fetch_stash_count = true
+      fetch_status = true
+      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    template = '<#5e81ac>[</><#5e81ac>]</>'
+    foreground = '#d8dee9'
+    type = 'root'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '<#5e81ac>[x</>{{ reason .Code }}<#5e81ac>]</>'
+    foreground = '#d8dee9'
+    type = 'status'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '<#5e81ac>┖[</>{{ .Path }}<#5e81ac>]</>'
+    foreground = '#88c0d0'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'full'
+
+  [[blocks.segments]]
+    template = '  '
+    foreground = '#5e81ac'
+    type = 'text'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+[[blocks]]
+  type = 'rprompt'
+
+  [[blocks.segments]]
+    foreground = '#FFD664'
+    type = 'upgrade'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '{{.Icon}} '
+    foreground = '#616E88'
+    type = 'os'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '  {{ .Full }}'
+    foreground = '#BF616A'
+    type = 'ruby'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '  {{ .Full }} '
+    foreground = '#A3BE8C'
+    type = 'node'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '  {{ .Full }} '
+    foreground = '#81A1C1'
+    type = 'lua'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '  {{ .Full }} '
+    foreground = '#EBCB8B'
+    type = 'python'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'

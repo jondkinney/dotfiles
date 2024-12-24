@@ -1,0 +1,29 @@
+Host coachesedg-stage
+  Hostname 18.217.22.121
+  ForwardAgent yes
+  User deploy
+
+Host coachesedg-prod
+  Hostname 18.223.114.64 
+  ForwardAgent yes
+  User deploy
+
+Host mbp16
+  Hostname jondk.dyndns.org
+  User jon
+  port 5900
+
+Host synology_root
+  Hostname 192.168.1.78
+  User root
+
+Host synology_admin
+  Hostname 192.168.1.78
+  User admin
+
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

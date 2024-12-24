@@ -1,0 +1,7 @@
+[tools]
+  ruby = "3.2"
+  node = "20"
+  lua = "5.1"
+
+[settings]
+  status = { missing_tools = "if_other_versions_installed", show_env = true, show_tools = true }
