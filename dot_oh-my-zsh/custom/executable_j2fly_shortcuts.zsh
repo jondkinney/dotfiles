@@ -58,8 +58,7 @@ alias gmnff='git merge --no-edit --no-ff $*'
 alias mmts='git checkout staging; git merge --no-edit --no-ff main; git push; git push --tags'
 alias mmtp='git checkout production; git merge --no-edit --no-ff main; git push; git push --tags'
 alias mmte='mmts;mmtp'
-# alias gbc='git rev-parse --abbrev-ref HEAD 2>/dev/null | cut -d"/" -f 2 | tr -d "\n" | pbcopy' # copies the current branch to your clipboard (on os x)
-alias gbc='git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n" | pbcopy'
+alias gbc='git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n" | pbcopy' # copies the current branch to your clipboard (on os x)
 alias dev='git checkout development'
 alias sta='git checkout staging'
 alias prd='git checkout production'
@@ -194,7 +193,6 @@ alias hack='tmuxinator start hack; set_tab_and_title_name Hack'
 alias coachesEDG='cd ~/Code/coachesedg/coachesedg-web; set_tab_and_title_name CoachesEDG Web'
 alias festival='cd ~/Code/festival; set_tab_and_title_name Festival'
 alias weedwire='cd ~/Code/weedwire; set_tab_and_title_name Weedwire'
-alias my_radar='cd ~/Code/myradar-website/; set_tab_and_title_name MyRadar'
 alias ia='cd ~/Code/ia-workspaces/; set_tab_and_title_name Inductive Automation; tmuxinator start ia'
 
 
@@ -214,6 +212,8 @@ alias rdm='bin/rails db:migrate'
 alias rc='bin/rails console'
 alias rdbc='bin/rails dbconsole'
 alias kr='kill -9 `cat tmp/pids/server.pid; echo;`'
+
+# IA Kill Ports
 alias kia='kill_port 9088; kill_port 9089; kill_port 6006 node=true'
 
 alias webserver='python -m SimpleHTTPServer'

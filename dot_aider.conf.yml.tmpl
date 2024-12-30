@@ -18,13 +18,13 @@
 # Main:
 
 ## Specify the OpenAI API key
-openai-api-key: {{ onepasswordRead "op://Personal/openai-api-key/password" }}
+openai-api-key: {{ onepasswordRead "op://Personal/openai-api-key/password" "headway" }}
 
 #  TODO: (2024-08-05) Jon => figure out how to use this key
-# open-router-key: {{ onepasswordRead "op://Personal/open-router-key/password" }}
+# open-router-key: {{ onepasswordRead "op://Personal/open-router-key/password" "headway" }}
 
 ## Specify the Anthropic API key
-anthropic-api-key: {{ onepasswordRead "op://Personal/anthropic-api-key/password" }}
+anthropic-api-key: {{ onepasswordRead "op://Personal/anthropic-api-key/password" "headway" }}
 ## Specify the model to use for the main chat
 # model: anthropic.claude-3-5-sonnet-20240620-v1:0
 

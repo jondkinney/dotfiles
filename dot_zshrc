@@ -66,9 +66,10 @@ export PATH
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # oh-my-posh is a simple and confiruable terminal prompt theme
-eval "$(oh-my-posh init zsh --config ~/nordtron.jdk.toml)"
+eval "$(oh-my-posh init zsh --config ~/.config/nordtron.jdk.toml)"
 
 # zoxide is a smarter cd command
+export _ZO_DATA_DIR="$HOME/.config/zoxide"
 eval "$(zoxide init --cmd cd zsh --hook pwd)"
 
 # managing shell environments and programming language versions 

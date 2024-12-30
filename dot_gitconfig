@@ -34,15 +34,8 @@
 	cm = cherry -v --abbrev=7 master #useful in a feature branch to show what commits the feature branch has that master doesn't
 	cprd = cherry -v --abbrev=7 production
 	cs = cherry -v --abbrev=7 staging
-	cp = cherry-pick
-	fp = fetch --prune
 	ctags = !.git/hooks/ctags
-	ri = rebase --interactive
-  ff = "!_() { f=$(git rev-parse --abbrev-ref HEAD 2>/dev/null | cut -d\"/\" -f 2 | tr -d \"\n\"); git flow feature finish $f; }; _"
-	up = "pull --rebase origin master"
 	lg = log --color --graph --branches --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	unstage = reset HEAD --
-	amend = commit --amend
 	lastedited = log --pretty=format: --name-only --no-merges -n 1
 [filter "media"]
 	required = true
